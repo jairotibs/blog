@@ -69,5 +69,22 @@
       "bio": "programador react",
       "id": 5
     }
+  ],
+  "categorias": [
+    {
+      "nomeCategoria": "Esportes",
+      "descricao": "notícias esportivas",
+      "id": 1
+    },
+    {
+      "nomeCategoria": "Educação",
+      "descricao": "Conteúdo educacional",
+      "id": 2
+    },
+    {
+      "nomeCategoria": "Aleatório",
+      "descricao": "Assuntos Aleatórios",
+      "id": 3
+    }
   ]
 }

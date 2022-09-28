@@ -6,6 +6,7 @@ import BlogDetails from './BlogDetails';
 import NotFound from './NotFound';
 import Atualizar from './Atualizar';
 import CreateAuthor from './CreateAuthor';
+import CriarCategoria from './CriarCategoria';
 
 function App() {
 
@@ -24,6 +25,9 @@ function App() {
             </Route>
             <Route path="/createAuthor">
               <CreateAuthor />
+            </Route>
+            <Route path="/criarCategoria">
+              <CriarCategoria />
             </Route>
             <Route path="/atualizar/:id">
               <Atualizar />

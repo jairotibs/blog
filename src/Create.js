@@ -9,11 +9,13 @@ const Create = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [author, setAuthor] = useState('');
-  
+  const [categoria, setCategoria] = useState('')
+  const [palavrasChave, setPalavrasChave] = useState('')
   const history = useHistory();
 
 
   const { error, isPending, data: autores } = useFetch('http://localhost:8000/autores');
+  const { error : erro, isPending : pendente, data: categorias } = useFetch('http://localhost:8000/categorias');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,12 +46,26 @@ const Create = () => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
+
+        <label>Categoria:</label>
+        <select value={categoria} 
+                onChange={(e)=>setCategoria(e.target.value)}
+
+        >
+          {/*categorias && categorias.map(cat =>(<option value={cat.nome.toLowerCase()}>{cat.nome}</option>))*/}
+          {categorias && categorias.map(cat=>(<option value={cat.nomeCategoria.toLowerCase()}>{cat.nomeCategoria}</option>))}
+        </select>
+
         <label>Blog body:</label>
         <textarea
           required
           value={body}
           onChange={(e) => setBody(e.target.value)}
         ></textarea>
+        
+        <label>Palavras-chave</label>
+        <input type="text" required value={palavrasChave} onChange={e=>setPalavrasChave(e.target.value)} />
+        
         <label>Blog author:</label>
         <select
           value={author}
