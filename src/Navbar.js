@@ -11,7 +11,11 @@ const Navbar = () => {
           backgroundColor: '#f1356d',
           borderRadius: '8px' 
         }}>New Blog</Link>
-        
+        <Link to="/createAuthor" style={{ 
+          color: 'white', 
+          backgroundColor: '#f1356d',
+          borderRadius: '8px' 
+        }}>New Author</Link>
       </div>
     </nav>
   );

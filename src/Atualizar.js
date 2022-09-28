@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
+import useFetch from "./useFetch";
 
 
 const Atualizar = () => {
@@ -12,6 +13,7 @@ const Atualizar = () => {
   
   const { id } = useParams();
 
+  const { error, isPending, data: autores } = useFetch('http://localhost:8000/autores');
 
  //Obtém os dados(GET) quando a página é carregada; Realiza essa operação apenas uma vez;
  //Os dados serão utilizados para setar os campos do formulário(atualizar)
@@ -68,13 +70,9 @@ const Atualizar = () => {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         >
-          <option value="mario">Mario</option>
-          <option value="yoshi">Yoshi</option>
-          <option value="jairo">Jairo</option>
-          <option value="tony">Tony</option>
-          <option value="saulo">Saulo</option>
-          <option value="marlos">Marlos</option>
-          <option value="lucas">Lucas</option>
+          {/*realiza a listagem dos autores.*/}
+          {autores && autores.map(autor=>(<option value={autor.nome.toLowerCase()}>{autor.nome}</option>))}
+          
         </select>
         <button>Atualizar Blog</button>
       </form>

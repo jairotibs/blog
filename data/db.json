@@ -1,9 +1,9 @@
 {
   "blogs": [
     {
-      "title": "blog blog 1555",
-      "body": "corpo do blog 1555",
-      "author": "jairo",
+      "title": "blog 20",
+      "body": "corpo do blog 1",
+      "author": "yoshi",
       "id": 2
     },
     {
@@ -35,6 +35,39 @@
       "body": "novo blog 250",
       "author": "saulo",
       "id": 7
+    },
+    {
+      "title": "blog de futebol",
+      "body": "copa do mundo ocorrerá em novembro",
+      "author": "saulo",
+      "id": 8
+    }
+  ],
+  "autores": [
+    {
+      "id": 1,
+      "nome": "Mario",
+      "bio": "Personagem mais famoso da Nintendo"
+    },
+    {
+      "id": 2,
+      "nome": "Yoshi",
+      "bio": "Também romanizado Yossy em alguns materiais em língua japonesa) é um personagem fictício, um dinossauro antropomórfico, que aparece na série de videogames Mario, produzida pela Nintendo."
+    },
+    {
+      "id": 3,
+      "nome": "Saulo",
+      "bio": "Novato da STI"
+    },
+    {
+      "nome": "jairo",
+      "bio": "novo programador",
+      "id": 4
+    },
+    {
+      "nome": "tony",
+      "bio": "o melhor programador react do turno da manhã e da tarde",
+      "id": 5
     }
   ]
 }

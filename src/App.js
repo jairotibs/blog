@@ -5,6 +5,7 @@ import Create from './Create';
 import BlogDetails from './BlogDetails';
 import NotFound from './NotFound';
 import Atualizar from './Atualizar';
+import CreateAuthor from './CreateAuthor';
 
 function App() {
 
@@ -20,6 +21,9 @@ function App() {
             </Route>
             <Route path="/create">
               <Create />
+            </Route>
+            <Route path="/createAuthor">
+              <CreateAuthor />
             </Route>
             <Route path="/atualizar/:id">
               <Atualizar />

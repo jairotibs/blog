@@ -1,15 +1,19 @@
 
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import useFetch from "./useFetch";
 
 
 const Create = () => {
 
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  const [author, setAuthor] = useState('mario');
+  const [author, setAuthor] = useState('');
   
   const history = useHistory();
+
+
+  const { error, isPending, data: autores } = useFetch('http://localhost:8000/autores');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,13 +55,9 @@ const Create = () => {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         >
-          <option value="mario">Mario</option>
-          <option value="yoshi">Yoshi</option>
-          <option value="jairo">Jairo</option>
-          <option value="tony">Tony</option>
-          <option value="saulo">Saulo</option>
-          <option value="marlos">Marlos</option>
-          <option value="lucas">Lucas</option>
+          {/*realiza a listagem dos autores.*/}
+          {autores && autores.map(autor=>(<option value={autor.nome.toLowerCase()}>{autor.nome}</option>))}
+         
         </select>
         <button>Add Blog</button>
       </form>
