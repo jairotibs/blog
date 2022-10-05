@@ -7,6 +7,8 @@ import NotFound from './NotFound';
 import Atualizar from './Atualizar';
 import CreateAuthor from './CreateAuthor';
 import CriarCategoria from './CriarCategoria';
+import CriarDominio from './CriarDominio';
+import CriarCriterioBusca from './CriarCriterioBusca';
 
 function App() {
 
@@ -29,6 +31,14 @@ function App() {
             <Route path="/criarCategoria">
               <CriarCategoria />
             </Route>
+            <Route path="/criarDominio">
+              <CriarDominio />
+            </Route>
+
+            <Route path="/criarCriterioBusca">
+             <CriarCriterioBusca />
+            </Route>
+
             <Route path="/atualizar/:id">
               <Atualizar />
             </Route>

@@ -1,6 +1,7 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import ListaCategoria from "./ListaCategoria";
 import useFetch from "./useFetch";
 
 
@@ -11,15 +12,25 @@ const Create = () => {
   const [author, setAuthor] = useState('');
   const [categoria, setCategoria] = useState('')
   const [palavrasChave, setPalavrasChave] = useState('')
-  const history = useHistory();
+  const dataHoje = new Date();
+  const [dataCadastro, setDataCadastro] = useState(dataHoje)
 
+  const history = useHistory();
+  
 
   const { error, isPending, data: autores } = useFetch('http://localhost:8000/autores');
   const { error : erro, isPending : pendente, data: categorias } = useFetch('http://localhost:8000/categorias');
 
+  //atualiza a data, caso haja mudança no valor da data
+  useEffect(()=>{
+    setDataCadastro(dataCadastro);
+
+  }, [dataCadastro]
+  );
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { title, body, author };
+    const blog = { title, body, author, categoria, palavrasChave, dataCadastro };
 
     fetch('http://localhost:8000/blogs', {
       method: 'POST',
@@ -48,12 +59,13 @@ const Create = () => {
         />
 
         <label>Categoria:</label>
+        {/*<ListaCategoria categoria={categoria} categorias={categorias} funcao = {setCategoria}/>*/}
         <select value={categoria} 
                 onChange={(e)=>setCategoria(e.target.value)}
 
         >
-          {/*categorias && categorias.map(cat =>(<option value={cat.nome.toLowerCase()}>{cat.nome}</option>))*/}
-          {categorias && categorias.map(cat=>(<option value={cat.nomeCategoria.toLowerCase()}>{cat.nomeCategoria}</option>))}
+        
+          {categorias && categorias.map(cat=>(<option key={cat.nomeCategoria} value={cat.nomeCategoria.toLowerCase()}>{cat.nomeCategoria}</option>))}
         </select>
 
         <label>Blog body:</label>

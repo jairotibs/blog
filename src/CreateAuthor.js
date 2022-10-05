@@ -17,7 +17,7 @@ const CreateAuthor = ()=>{
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(autor)
         }).then(()=>{
-            console.log(autor.nome)
+           // console.log(autor.nome)
             history.push('/')
         })
     }

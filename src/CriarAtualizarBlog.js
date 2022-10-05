@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 
 
-const Atualizar = () => {
+const CriarAtualizarblog = (props) => {
   const history = useHistory();
   
   const [title, setTitle] = useState('');
@@ -16,14 +16,18 @@ const Atualizar = () => {
   const [ultimaDataAtualizacao, setUltimaDataAtualizacao] = useState(dataAtualizacao)
   
   const { id } = useParams();
-
-  const { error, isPending, data: autores } = useFetch('http://localhost:8000/autores');
-  const { error : erro, isPending : pendente, data: categorias } = useFetch('http://localhost:8000/categorias');
+  
+  const { error, isPending, data: autores } = useFetch(props.dominio + props.diretorio);//diretorio->autores
+  const { error : erro, isPending : pendente, data: categorias } = useFetch(props.dominio + props.diretorio);//diretorio->categorias
+  //const { error : erro, isPending : pendente, data: categorias } = useFetch('http://localhost:8000/categorias');//diretorio->categorias
+  //const { error, isPending, data: autores } = useFetch('http://localhost:8000/autores');
+ // const { error : erro, isPending : pendente, data: categorias } = useFetch('http://localhost:8000/categorias');
 
  //Obtém os dados(GET) quando a página é carregada; Realiza essa operação apenas uma vez;
  //Os dados serão utilizados para setar os campos do formulário(atualizar)
     useEffect( ()=>{
-    fetch('http://localhost:8000/blogs/' + id, {
+    //fetch('http://localhost:8000/blogs/' + id, {//diretorio->blogs/ props.dominio
+    fetch(props.dominio+'/'+props.diretorio +'/'+ id, {//diretorio->blogs
     }).then(retorno =>retorno.json())
       .then((registro)=>{
       setTitle(registro.title);
@@ -43,6 +47,7 @@ const Atualizar = () => {
     const blog = { title, body, author };
     console.log(title);
     fetch('http://localhost:8000/blogs/'+ id, {
+     // fetch(props.dominio)
       method: 'PUT',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blog)
@@ -93,11 +98,11 @@ const Atualizar = () => {
           {autores && autores.map(autor=>(<option value={autor.nome.toLowerCase()}>{autor.nome}</option>))}
           
         </select>
-        <button>Atualizar Blog</button>
+        <button>{ props.nomeBotao }</button>
       </form>
   </div>
     
   );
 }
  
-export default Atualizar;
+export default CriarAtualizarblog;

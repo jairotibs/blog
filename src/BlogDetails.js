@@ -32,7 +32,10 @@ const BlogDetails = () => {
         <article>
           <h2>{ blog.title }</h2>
           <p>Written by { blog.author }</p>
+          <div>{ blog.categoria }</div>
           <div>{ blog.body }</div>
+          <div>{ blog.palavrasChave}</div>
+          <p>Data da Criação: {blog.dataCadastro}</p>
           <button onClick={handleClick}>delete</button>
           <button onClick={redirecionarAtualizar}>Atualizar</button>
         </article>
