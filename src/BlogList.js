@@ -1,11 +1,83 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Seletor from './Seletor';
+import ListaCategoria from './ListaCategoria';
+import ListarAutores from './ListarAutores';
+import useFetch from './useFetch';
+//import Seletor from './Seletor';
 
-const BlogList = ({ blogs, criteriosBusca, categorias, autores}) => {
+const BlogList = ({ criteriosBusca, categorias, autores}) => {
   //para cada critério, um item será escolhido. Essas informações serão setadas ao chamar
-  const[criterioEscolhido, setCriterioEscolhido] = useState('')
-  const[itemEscolhido, setItemEscolhido] = useState('')
+  {/*const[criterioEscolhido, setCriterioEscolhido] = useState('')
+     const[itemEscolhido, setItemEscolhido] = useState('')*/} 
+  const [opcao, setOpcao] = useState('')
+  const [opcaoCategoria, setOpcaoCategoria] = useState('')
+  const [opcaoAutor, setOpcaoAutor] = useState('')
+  const [dados, setDados] = useState(null)
+  const ulr2 = 'http://localhost:8000/blogs';
+  const [urll, setUrll] = useState('')
+  const { error, isPending, data: blogs } = useFetch(urll);
+
+  //const {data} = useBuscarItem(urll);
+
+useEffect(()=>{
+  if (opcaoCategoria != '' || opcaoAutor != ''){
+    console.log(ulr2+'?'+`${opcao}`+'_like='+`${opcaoAutor}`);
+    setUrll(ulr2+'?'+`${opcao}`+'_like='+`${opcaoAutor}`)
+  } else {
+    setUrll(ulr2)
+  }
+
+  
+},[opcaoCategoria, opcaoAutor, opcao])
+
+  const exibirSegundoItem = (option) => {
+    console.log('a opcao e '+opcao)
+    switch(option){
+        case 'author': { 
+                        //setUrll(urll+'?'+`${opcao}`+'_like='+`${opcaoAutor}`);
+                        console.log(urll)
+                        return (<ListarAutores autor={opcaoAutor} funcao={setOpcaoAutor} autores={autores}/>)
+                      };
+        //case 'categoria': <ListaCategoria categoria={opcaoCategoria} funcao={setOpcaoCategoria} categorias={categorias}/>
+        case 'categoria' : return (<ListaCategoria categoria={opcaoCategoria} categorias={categorias} funcao={setOpcaoCategoria} />);
+       // case 'palavras-chave':<BuscaPalavraChave />
+        case 'palavras-chave' : return('');
+        default:  ;
+        break;
+    }
+    {/*setUrll(urll+'?'+`${opcao}`+'_like='+`${opcaoAutor}`)*/}
+   {/*useBuscarItem('http://localhost:8000/')*/}
+   {/*funcaoCriterio(option);*/}
+   {/*funcaoItem(opcaoCategoria != '' ? opcaoCategoria : (opcaoAutor != '' ? opcaoAutor : ''))*/}
+}
+
+{/*const exibirSegundoItem2 = (e, option) => {
+  e.preventDefault();
+  switch(option){
+    case 'autor': { 
+                    setUrll(urll+'?'+`${opcao}`+'_like='+`${opcaoAutor}`);
+                    console.log(urll)
+                    return (<ListarAutores autor={opcaoAutor} funcao={setOpcaoAutor} autores={autores}/>)
+                  };
+    //case 'categoria': <ListaCategoria categoria={opcaoCategoria} funcao={setOpcaoCategoria} categorias={categorias}/>
+    case 'categoria' : return (<ListaCategoria categoria={opcaoCategoria} categorias={categorias} funcao={setOpcaoCategoria} />);
+   // case 'palavras-chave':<BuscaPalavraChave />
+    case 'palavras-chave' : return('');
+    default:  ;
+    break;
+}
+}*/}
+
+/*const useBuscarItem = (url) =>{
+  useEffect(()=>{
+    fetch(url,{}
+      ).then(retorno =>retorno.json())
+      .then(data=>{
+        setDados(data);
+      }).catch((err)=>{console.log(err.message())})
+  },[url])
+  return data;
+}*/
 
   return (
    /* <>
@@ -13,27 +85,56 @@ const BlogList = ({ blogs, criteriosBusca, categorias, autores}) => {
     label="Parent"
     />*/
     <>
+    
 
-    {console.log(criteriosBusca)}
       <div>
        <fieldset>
           <legend>Filtrar por</legend>
-          <Seletor criteriosBusca={criteriosBusca} categorias={categorias} autores={autores} funcaoCriterio={setCriterioEscolhido} funcaoItem={setItemEscolhido}/>
+          {/*<Seletor criteriosBusca={criteriosBusca} categorias={categorias} autores={autores} funcaoCriterio={setCriterioEscolhido} funcaoItem={setItemEscolhido}/>*/}
+          
+      <select onChange={e => setOpcao(e.target.value) } >
+         <option value="selecione">Selecione</option>
+         {criteriosBusca && criteriosBusca.map(criterio=><option key={criterio.nome} value={criterio.nome.toLowerCase()}>{criterio.nome}</option>)}
+         
+      </select>
+      {/*<select onChange={e=>exibirSegundoItem2(e,e.target.value)} >
+         <option value="selecione">Selecione</option>
+         {criteriosBusca && criteriosBusca.map(criterio=><option key={criterio.nome} value={criterio.nome.toLowerCase()}>{criterio.nome}</option>)}
+    </select>*/}
+          
+          {exibirSegundoItem(opcao)}
+          {/*setUrll(urll+'?'+`${opcao}`+'_like='+`${opcaoAutor}`)*/}
+          {console.log('url: '+urll)}
       </fieldset>
       </div>
       <div className="blog-list">
-      
-      {blogs.map(blog => (
+      {/* se o primeiro campo estiver selecionado, mas o segundo não estiver, manter a lista na tela. */}
+      {blogs && blogs.length > 0 ? (blogs.map(blog => (
         <div className="blog-preview" key={blog.id}>
           <Link to={`/blogs/${blog.id}`}>
             <h2>{blog.title}</h2>
             <p>Written by {blog.author}</p>
           </Link>
         </div>
-      ))}
-
-
-     {console.log('escolhido '+criterioEscolhido)}
+      ))
+      
+      ) : <p>Não há blogs</p>}  
+      {/*!(opcao ==='' || opcao ==='selecione') && opcao ==='autor' && blogs.filter(blogg=>blogg.categoria===itemEscolhido).map(blog => (
+        <div className="blog-preview" key={blog.id}>
+          <Link to={`/blogs/${blog.id}`}>
+            <h2>{blog.title}</h2>
+            <p>Written by {blog.author}</p>
+          </Link>
+        </div>
+      ))*/}
+      { /*console.log(blogs?opcao_like=opcaoCategoria)*/ }
+    {/*setUrll(urll+'?'+`${opcao}`+'_like='+`${opcaoAutor}`)*/}
+     {console.log('opcao escolhida:: '+opcao)}
+     {console.log('item escolhido:: '+opcaoCategoria)}
+     {console.log('item escolhido::: '+opcaoAutor)}
+     {/*setItemEscolhido(opcaoCategoria !=''? opcaoCategoria : (opcaoAutor != '' ? opcaoAutor: opcaoAutor))*/}
+     {/*console.log('criterio escolhido: '+criterioEscolhido +'item escolhido:'+itemEscolhido)*/}
+     {/*console.log('item escolhido2 ' + itemEscolhido)*/}
     </div>
   </>
   );

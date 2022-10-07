@@ -12,19 +12,19 @@ const Seletor = ({criteriosBusca, categorias, autores, funcaoCriterio, funcaoIte
     const [opcaoCategoria, setOpcaoCategoria] = useState('')
     const [opcaoAutor, setOpcaoAutor] = useState('')
 
-    const exibirSegundoItem = (option) =>{
-        console.log('a opcao e '+opcao)
+    const exibirSegundoItem = (option) => {
+        console.log('a opcao eh '+opcao)
         switch(option){
             case 'autor': return (<ListarAutores autor={opcaoAutor} funcao={setOpcaoAutor} autores={autores}/>);
             //case 'categoria': <ListaCategoria categoria={opcaoCategoria} funcao={setOpcaoCategoria} categorias={categorias}/>
             case 'categoria' : return (<ListaCategoria categoria={opcaoCategoria} categorias={categorias} funcao={setOpcaoCategoria} />);
            // case 'palavras-chave':<BuscaPalavraChave />
-           
+            case 'palavras-chave' : return('');
             default:  ;
         }
 
-       {funcaoCriterio(option);}
- 
+       {/*funcaoCriterio(option);*/}
+       {/*funcaoItem(opcaoCategoria != '' ? opcaoCategoria : (opcaoAutor != '' ? opcaoAutor : ''))*/}
        
 
     }
@@ -44,14 +44,17 @@ const Seletor = ({criteriosBusca, categorias, autores, funcaoCriterio, funcaoIte
 
 return(
     <>
+    {/*<select onChange={e=>exibirSegundoItem(e.target.value)} >*/}
     <select onChange={e=>setOpcao(e.target.value)} >
         <option value="selecione">Selecione</option>
         {criteriosBusca && criteriosBusca.map(criterio=><option key={criterio.nome} value={criterio.nome.toLowerCase()}>{criterio.nome}</option>)}
     </select>
     
-    {/*funcao()*/}
-    {console.log(opcao)}
-    {console.log('bla '+opcaoCategoria)}
+
+    {console.log('opcao escolhida no comp seletor '+opcao)}
+    {console.log('opcao escolhida autor '+opcaoAutor)}
+    {console.log('opcao escolhida categoria: '+opcaoCategoria)}
+    {/*console.log('bla '+opcaoCategoria)*/}
     {exibirSegundoItem(opcao)}
     </>
 )

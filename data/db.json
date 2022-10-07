@@ -33,7 +33,7 @@
     {
       "title": "novo blog500",
       "body": "novo blog 250",
-      "author": "saulo",
+      "author": "jairo",
       "id": 7
     },
     {
@@ -130,7 +130,7 @@
   ],
   "criteriosBusca": [
     {
-      "nome": "Autor",
+      "nome": "Author",
       "id": 1
     },
     {
