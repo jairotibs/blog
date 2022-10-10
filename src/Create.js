@@ -1,7 +1,6 @@
 
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import ListaCategoria from "./ListaCategoria";
 import useFetch from "./useFetch";
 
 
@@ -65,7 +64,7 @@ const Create = () => {
 
         >
         
-          {categorias && categorias.map(cat=>(<option key={cat.nomeCategoria} value={cat.nomeCategoria.toLowerCase()}>{cat.nomeCategoria}</option>))}
+          {categorias && categorias.map(cat=>(<option key={cat.nomeCategoria.toLowerCase()} value={cat.nomeCategoria.toLowerCase()}>{cat.nomeCategoria}</option>))}
         </select>
 
         <label>Blog body:</label>
@@ -84,7 +83,7 @@ const Create = () => {
           onChange={(e) => setAuthor(e.target.value)}
         >
           {/*realiza a listagem dos autores.*/}
-          {autores && autores.map(autor=>(<option value={autor.nome.toLowerCase()}>{autor.nome}</option>))}
+          {autores && autores.map(autor=>(<option key={autor.nome.toLowerCase()} value={autor.nome.toLowerCase()}>{autor.nome}</option>))}
          
         </select>
         <button>Add Blog</button>

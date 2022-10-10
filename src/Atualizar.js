@@ -40,7 +40,7 @@ const Atualizar = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { title, body, author };
+    const blog = { title, author, body, categoria, palavrasChave };
     console.log(title);
     fetch('http://localhost:8000/blogs/'+ id, {
       method: 'PUT',
@@ -71,7 +71,7 @@ const Atualizar = () => {
 
         >
           {/*categorias && categorias.map(cat =>(<option value={cat.nome.toLowerCase()}>{cat.nome}</option>))*/}
-          {categorias && categorias.map(cat=>(<option value={cat.nomeCategoria.toLowerCase()}>{cat.nomeCategoria}</option>))}
+          {categorias && categorias.map(cat=>(<option key={cat.nomeCategoria.toLowerCase()}>{cat.nomeCategoria}</option>))}
         </select>
 
         <label>Blog body:</label>
@@ -90,7 +90,7 @@ const Atualizar = () => {
           onChange={(e) => setAuthor(e.target.value)}
         >
           {/*realiza a listagem dos autores.*/}
-          {autores && autores.map(autor=>(<option value={autor.nome.toLowerCase()}>{autor.nome}</option>))}
+          {autores && autores.map(autor=>(<option key={autor.nome.toLowerCase()}>{autor.nome}</option>))}
           
         </select>
         <button>Atualizar Blog</button>
