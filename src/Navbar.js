@@ -20,12 +20,12 @@ const Navbar = () => {
           color: 'white', 
           backgroundColor: '#f1356d',
           borderRadius: '8px' 
-        }}>Nova Categoria</Link>
+        }}>Nova Category</Link>
         {<Link to="/criarCriterioBusca" style={{ 
           color: 'white', 
           backgroundColor: '#f1356d',
           borderRadius: '8px' 
-        }} >Novo Criterio</Link>}
+        }} >Novo Criterion</Link>}
         
       </div>
     </nav>

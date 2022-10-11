@@ -99,11 +99,10 @@
     },
     {
       "title": "Omelete",
+      "author": "jairo",
       "body": "tudo sobre séries, filmes, cinema, eventos sociais",
-      "author": "saulo",
       "categoria": "cultura",
       "palavrasChave": "cinema, séries, sociedade",
-      "dataCadastro": "2022-10-11T12:08:17.456Z",
       "id": 16
     }
   ],
