@@ -90,20 +90,18 @@
     },
     {
       "title": "Jovem Nerd",
-      "body": "Jovem Nerd",
       "author": "saulo",
+      "body": "Jovem Nerd",
       "categoria": "educação",
-      "palavrasChave": "tecnologia, ciência, star wars, ",
-      "dataCadastro": "2022-10-11T11:59:23.034Z",
+      "palavrasChave": "tecnologia, ciência, star wars, variedades",
       "id": 15
     },
     {
       "title": "Omelete",
-      "body": "tudo sobre séries, filmes, cinema, eventos sociais",
       "author": "saulo",
+      "body": "tudo sobre séries, filmes, cinema, eventos sociais",
       "categoria": "cultura",
-      "palavrasChave": "cinema, séries, sociedade",
-      "dataCadastro": "2022-10-11T12:08:17.456Z",
+      "palavrasChave": "cinema, séries, sociedade, lançamentos, variedades",
       "id": 16
     }
   ],

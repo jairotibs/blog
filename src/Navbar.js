@@ -10,22 +10,22 @@ const Navbar = () => {
           color: 'white', 
           backgroundColor: '#f1356d',
           borderRadius: '8px' 
-        }}>New Blog</Link>
+        }}>Novo Blog</Link>
         <Link to="/createAuthor" style={{ 
           color: 'white', 
           backgroundColor: '#f1356d',
           borderRadius: '8px' 
-        }}>New Author</Link>
+        }}>Novo Autor</Link>
         <Link to="/criarCategoria" style={{ 
           color: 'white', 
           backgroundColor: '#f1356d',
           borderRadius: '8px' 
-        }}>Nova Category</Link>
+        }}>Nova Categoria</Link>
         {<Link to="/criarCriterioBusca" style={{ 
           color: 'white', 
           backgroundColor: '#f1356d',
           borderRadius: '8px' 
-        }} >Novo Criterion</Link>}
+        }} >Novo Criterio</Link>}
         
       </div>
     </nav>
