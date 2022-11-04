@@ -1,108 +1,117 @@
 {
   "blogs": [
     {
-      "title": "blog da educação",
-      "author": "yoshi",
-      "body": "Lorem ipsum dolor vestibulum primis ultricies imperdiet molestie risus amet himenaeos, molestie dictumst ante velit risus duis etiam diam suspendisse orci erat, dictumst auctor ornare netus donec dictum ut donec elementum. ullamcorper ligula risus condimentum aliquet consequat proin hac, et cras at aenean feugiat orci, in congue aenean mi pharetra ornare. malesuada eu litora in dapibus placerat lectus sociosqu pretium, tincidunt mauris mi varius fringilla conubia. elit vehicula nisi lacinia curabitur venenatis facilisis velit vehicula primis ut molestie, eros volutpat nam ut suscipit lobortis odio pulvinar aliquam massa tortor, elementum augue semper phasellus ante molestie rutrum etiam aliquam urna. ",
+      "titulo": "blog da educação",
+      "autor": "yoshi",
+      "conteudo": "Lorem ipsum dolor vestibulum primis ultricies imperdiet molestie risus amet himenaeos, molestie dictumst ante velit risus duis etiam diam suspendisse orci erat, dictumst auctor ornare netus donec dictum ut donec elementum. ullamcorper ligula risus condimentum aliquet consequat proin hac, et cras at aenean feugiat orci, in congue aenean mi pharetra ornare. malesuada eu litora in dapibus placerat lectus sociosqu pretium, tincidunt mauris mi varius fringilla conubia. elit vehicula nisi lacinia curabitur venenatis facilisis velit vehicula primis ut molestie, eros volutpat nam ut suscipit lobortis odio pulvinar aliquam massa tortor, elementum augue semper phasellus ante molestie rutrum etiam aliquam urna. ",
       "categoria": "Educação",
       "palavrasChave": "livros, literatura",
       "id": 2
     },
     {
-      "title": "blog 999990",
-      "author": "Saulo",
-      "body": "Lorem ipsum dolor vestibulum primis ultricies imperdiet molestie risus amet himenaeos, molestie dictumst ante velit risus duis etiam diam suspendisse orci erat, dictumst auctor ornare netus donec dictum ut donec elementum. ullamcorper ligula risus condimentum aliquet consequat proin hac, et cras at aenean feugiat orci, in congue aenean mi pharetra ornare. malesuada eu litora in dapibus placerat lectus sociosqu pretium, tincidunt mauris mi varius fringilla conubia. elit vehicula nisi lacinia curabitur venenatis facilisis velit vehicula primis ut molestie, eros volutpat nam ut suscipit lobortis odio pulvinar aliquam massa tortor, elementum augue semper phasellus ante molestie rutrum etiam aliquam urna. ",
+      "titulo": "blog 999990",
+      "autor": "Saulo",
+      "conteudo": "Lorem ipsum dolor vestibulum primis ultricies imperdiet molestie risus amet himenaeos, molestie dictumst ante velit risus duis etiam diam suspendisse orci erat, dictumst auctor ornare netus donec dictum ut donec elementum. ullamcorper ligula risus condimentum aliquet consequat proin hac, et cras at aenean feugiat orci, in congue aenean mi pharetra ornare. malesuada eu litora in dapibus placerat lectus sociosqu pretium, tincidunt mauris mi varius fringilla conubia. elit vehicula nisi lacinia curabitur venenatis facilisis velit vehicula primis ut molestie, eros volutpat nam ut suscipit lobortis odio pulvinar aliquam massa tortor, elementum augue semper phasellus ante molestie rutrum etiam aliquam urna. ",
       "categoria": "Aleatório",
       "palavrasChave": "lorem, ipsum, dolor, aleatoriedades",
       "id": 3
     },
     {
-      "title": "blog 8888888",
-      "body": "body oitos",
-      "author": "marlos",
+      "titulo": "blog 8888888",
+      "conteudo": "conteudo oitos",
+      "autor": "marlos",
       "id": 4
     },
     {
-      "title": "novo blog",
-      "body": "novo blog",
-      "author": "yoshi",
+      "titulo": "novo blog",
+      "conteudo": "novo blog",
+      "autor": "yoshi",
       "id": 5
     },
     {
-      "title": "blog do Jamildo",
-      "body": "blog do Jamildo",
-      "author": "yoshi",
+      "titulo": "blog do Jamildo",
+      "conteudo": "blog do Jamildo",
+      "autor": "yoshi",
       "id": 6
     },
     {
-      "title": "novo blog500",
-      "body": "novo blog 250",
-      "author": "jairo",
+      "titulo": "novo blog500",
+      "conteudo": "novo blog 250",
+      "autor": "jairo",
       "id": 7
     },
     {
-      "title": "blog de futebol",
-      "body": "copa do mundo ocorrerá em novembro",
-      "author": "saulo",
+      "titulo": "blog de futebol",
+      "conteudo": "copa do mundo ocorrerá em novembro",
+      "autor": "saulo",
       "id": 8
     },
     {
-      "title": "Blog Nerd",
-      "body": "Lorem ipsum dolor vestibulum primis ultricies imperdiet molestie risus amet himenaeos, molestie dictumst ante velit risus duis etiam diam suspendisse orci erat, dictumst auctor ornare netus donec dictum ut donec elementum. ullamcorper ligula risus condimentum aliquet consequat proin hac, et cras at aenean feugiat orci, in congue aenean mi pharetra ornare. malesuada eu litora in dapibus placerat lectus sociosqu pretium, tincidunt mauris mi varius fringilla conubia. elit vehicula nisi lacinia curabitur venenatis facilisis velit vehicula primis ut molestie, eros volutpat nam ut suscipit lobortis odio pulvinar aliquam massa tortor, elementum augue semper phasellus ante molestie rutrum etiam aliquam urna. ",
-      "author": "yoshi",
+      "titulo": "Blog Nerd",
+      "conteudo": "Lorem ipsum dolor vestibulum primis ultricies imperdiet molestie risus amet himenaeos, molestie dictumst ante velit risus duis etiam diam suspendisse orci erat, dictumst auctor ornare netus donec dictum ut donec elementum. ullamcorper ligula risus condimentum aliquet consequat proin hac, et cras at aenean feugiat orci, in congue aenean mi pharetra ornare. malesuada eu litora in dapibus placerat lectus sociosqu pretium, tincidunt mauris mi varius fringilla conubia. elit vehicula nisi lacinia curabitur venenatis facilisis velit vehicula primis ut molestie, eros volutpat nam ut suscipit lobortis odio pulvinar aliquam massa tortor, elementum augue semper phasellus ante molestie rutrum etiam aliquam urna. ",
+      "autor": "yoshi",
       "id": 9
     },
     {
-      "title": "blog esportivo",
-      "body": "corpo do blog",
-      "author": "saulo",
+      "titulo": "blog esportivo",
+      "conteudo": "corpo do blog",
+      "autor": "saulo",
       "id": 10
     },
     {
-      "title": "Blog",
-      "body": "dfsdfd",
-      "author": "yoshi",
+      "titulo": "Blog",
+      "conteudo": "dfsdfd",
+      "autor": "yoshi",
       "id": 11
     },
     {
-      "title": "Blog da copa",
-      "body": "blog da copa do mundo 2022",
-      "author": "jairo",
+      "titulo": "Blog da copa",
+      "conteudo": "blog da copa do mundo 2022",
+      "autor": "jairo",
       "palavrasChave": "gol, campeonato, seleção, copa",
       "id": 12
     },
     {
-      "title": "blog concursos",
-      "author": "Saulo",
-      "body": "concursos 2022",
+      "titulo": "blog concursos",
+      "autor": "Saulo",
+      "conteudo": "concursos 2022",
       "categoria": "Educação",
       "palavrasChave": "concursos, fgv, fcc",
       "id": 13
     },
     {
-      "title": "Blog do Magno",
-      "body": "Ministro declara voto",
-      "author": "mario",
+      "titulo": "Blog do Magno",
+      "conteudo": "Ministro declara voto",
+      "autor": "mario",
       "categoria": "política",
       "palavrasChave": "eleições, voto, urna, turno",
       "dataCadastro": "2022-10-10T18:18:53.575Z",
       "id": 14
     },
     {
-      "title": "Jovem Nerd",
-      "author": "saulo",
-      "body": "Jovem Nerd",
+      "titulo": "Jovem Nerd",
+      "autor": "saulo",
+      "conteudo": "Jovem Nerd",
       "categoria": "educação",
       "palavrasChave": "tecnologia, ciência, star wars, variedades",
       "id": 15
     },
     {
-      "title": "Omelete",
-      "author": "saulo",
-      "body": "tudo sobre séries, filmes, cinema, eventos sociais",
+      "titulo": "Omelete",
+      "autor": "saulo",
+      "conteudo": "tudo sobre séries, filmes, cinema, eventos sociais",
       "categoria": "cultura",
       "palavrasChave": "cinema, séries, sociedade, lançamentos, variedades",
       "id": 16
+    },
+    {
+      "titulo": "Cartola FC",
+      "conteudo": "Junte sua turma e venha participar da grande festa do esporte mundial! Acesse o link: ..",
+      "autor": "tony",
+      "categoria": "",
+      "palavrasChave": "Cartola, Futebol, Copa, Brasil, Jogadores, Seleção, Seleções, Catar",
+      "dataCadastro": "2022-11-04T12:10:20.500Z",
+      "id": 17
     }
   ],
   "autores": [
@@ -178,7 +187,7 @@
   ],
   "criteriosBusca": [
     {
-      "nome": "author",
+      "nome": "autor",
       "id": 1
     },
     {
@@ -188,6 +197,30 @@
     {
       "nome": "categoria",
       "id": 3
+    }
+  ],
+  "menuItens": [
+    {
+      "titulo": "Home",
+      "url": "/"
+    },
+    {
+      "titulo": "Cadastros",
+      "url": "",
+      "submenu": [
+        {
+          "titulo": "blog",
+          "url": "/create"
+        },
+        {
+          "titulo": "autor",
+          "url": "/createautor"
+        }
+      ]
+    },
+    {
+      "titulo": "Relatórios",
+      "url": "/relatorios"
     }
   ]
 }

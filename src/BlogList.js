@@ -20,8 +20,8 @@ const BlogList = ({ criteriosBusca, categorias, autores}) => {
   const [selecionadoOp1, setSelecionadoOp1] = useState(false);//asc
   const [selecionadoOp2, setSelecionadoOp2] = useState(false);//desc
   const [selecionadoOp3, setSelecionadoOp3] = useState(false);//nada
-  //&_sort=title&_order=desc
-  //const ordenacao = '&_sort='.concat(title).concat('&_order=').concat(desc);
+  //&_sort=titulo&_order=desc
+  //const ordenacao = '&_sort='.concat(titulo).concat('&_order=').concat(desc);
 //A url é atualizada apenas quando as informações referentes a opção selecionada no primeiro seletor é realizada ou quando alguma opção no segundo seletor é selecionado.
 //Se apenas o item do primeiro seletor é escolhido, toda lista é mantida. O segundo item só aparece nos casos de autor e categorias. Então, se o segundo item for escolhido, 
 //obteremos uma url completa para realizarmos uma busca específica no arquivo json.
@@ -36,12 +36,12 @@ useEffect(()=>{
     //se o asc estiver selecionado
     if (selecionadoOp1){
 
-      setUrll(ulr2+'?_sort=title&_order=asc')
+      setUrll(ulr2+'?_sort=titulo&_order=asc')
 
     }//se o desc estiver selecionado
     else if (selecionadoOp2){
 
-      setUrll(ulr2+'?_sort=title&_order=desc')
+      setUrll(ulr2+'?_sort=titulo&_order=desc')
       
     }
     else{//se não houver seleção ou a terceira opção estiver selecionada, manterá a opção
@@ -51,16 +51,16 @@ useEffect(()=>{
   }
   else if (opcaoCategoria !== '' || opcaoAutor !== ''){
 
-    if (opcao === 'author'){
+    if (opcao === 'autor'){
 
       if (selecionadoOp1) {
       
-        setUrll(ulr2+'?'+`${opcao}`+'_like='+`${opcaoAutor}`+'&_sort=title&_order=asc')
+        setUrll(ulr2+'?'+`${opcao}`+'_like='+`${opcaoAutor}`+'&_sort=titulo&_order=asc')
 
       }
       else if (selecionadoOp2){
 
-        setUrll(ulr2+'?'+`${opcao}`+'_like='+`${opcaoAutor}`+'&_sort=title&_order=desc')
+        setUrll(ulr2+'?'+`${opcao}`+'_like='+`${opcaoAutor}`+'&_sort=titulo&_order=desc')
       
       } 
       else{
@@ -73,10 +73,10 @@ useEffect(()=>{
     else if(opcao === 'categoria'){
 
       if (selecionadoOp1){
-        setUrll(ulr2+'?'+`${opcao}`+'_like='+`${opcaoCategoria}`+'&_sort=title&_order=asc')
+        setUrll(ulr2+'?'+`${opcao}`+'_like='+`${opcaoCategoria}`+'&_sort=titulo&_order=asc')
       }
       else if (selecionadoOp2){
-        setUrll(ulr2+'?'+`${opcao}`+'_like='+`${opcaoCategoria}`+'&_sort=title&_order=desc')
+        setUrll(ulr2+'?'+`${opcao}`+'_like='+`${opcaoCategoria}`+'&_sort=titulo&_order=desc')
       }
       else{
       setUrll(ulr2+'?'+`${opcao}`+'_like='+`${opcaoCategoria}`)
@@ -90,11 +90,11 @@ useEffect(()=>{
 
       if (selecionadoOp1) {
 
-        setUrll(ulr2+'?'+`${opcao}`+'_like='+`${opcaoPalavrasChave}`+'&_sort=title&_order=asc')
+        setUrll(ulr2+'?'+`${opcao}`+'_like='+`${opcaoPalavrasChave}`+'&_sort=titulo&_order=asc')
       
       }
       else if (selecionadoOp2){
-        setUrll(ulr2+'?'+`${opcao}`+'_like='+`${opcaoPalavrasChave}`+'&_sort=title&_order=desc')
+        setUrll(ulr2+'?'+`${opcao}`+'_like='+`${opcaoPalavrasChave}`+'&_sort=titulo&_order=desc')
       }
       else{
         setUrll(ulr2+'?'+`${opcao}`+'_like='+`${opcaoPalavrasChave}`)
@@ -151,7 +151,7 @@ const exibirSegundoItem = (option) => {
     
     switch(option){
 
-        case 'author': return (<ListarAutores autor={opcaoAutor} funcao={setOpcaoAutor} autores={autores}/>);
+        case 'autor': return (<ListarAutores autor={opcaoAutor} funcao={setOpcaoAutor} autores={autores}/>);
         case 'categoria' : return (<ListaCategoria categoria={opcaoCategoria} categorias={categorias} funcao={setOpcaoCategoria} />);
         case 'palavrasChave' : return(<InputPalavrasChave funcao={setOpcaoPalavrasChave}/>);
         default:  ;
@@ -230,8 +230,8 @@ const mudarValorClique = ( valor) => {
       {blogs && blogs.length > 0 ? (blogs.map(blog => (
         <div className="blog-preview" key={blog.id}>
           <Link to={`/blogs/${blog.id}`}>
-            <h2>{blog.title}</h2>
-            <p>Written by {blog.author}</p>
+            <h2>{blog.titulo}</h2>
+            <p>Escrito por {blog.autor}</p>
           </Link>
         </div>
       ))

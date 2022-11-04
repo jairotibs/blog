@@ -30,10 +30,10 @@ const BlogDetails = () => {
       { error && <div>{ error }</div> }
       { blog && (
         <article>
-          <h2>{ blog.title }</h2>
-          <p>Written by { blog.author }</p>
+          <h2>{ blog.titulo }</h2>
+          <p>Written by { blog.autor }</p>
           <div>{ blog.categoria }</div>
-          <div>{ blog.body }</div>
+          <div>{ blog.conteudo }</div>
           <div>{ blog.palavrasChave}</div>
           <p>Data da Criação: {blog.dataCadastro}</p>
           <button onClick={handleClick}>delete</button>

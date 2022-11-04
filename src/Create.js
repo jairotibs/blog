@@ -6,9 +6,9 @@ import useFetch from "./useFetch";
 
 const Create = () => {
 
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
-  const [author, setAuthor] = useState('');
+  const [titulo, setTitulo] = useState('');
+  const [conteudo, setConteudo] = useState('');
+  const [autor, setAutor] = useState('');
   const [categoria, setCategoria] = useState('')
   const [palavrasChave, setPalavrasChave] = useState('')
   const dataHoje = new Date();
@@ -29,7 +29,7 @@ const Create = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { title, body, author, categoria, palavrasChave, dataCadastro };
+    const blog = { titulo, conteudo, autor, categoria, palavrasChave, dataCadastro };
 
     fetch('http://localhost:8000/blogs', {
       method: 'POST',
@@ -46,15 +46,15 @@ const Create = () => {
   return (
  
     <div className="create">
-      <h2>Add a New Blog</h2>
+      <h2>Adicione um Novo Blog</h2>
 
       <form onSubmit={handleSubmit}>
-        <label>Blog title:</label>
+        <label>Título:</label>
         <input 
           type="text" 
           required 
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          value={titulo}
+          onChange={(e) => setTitulo(e.target.value)}
         />
 
         <label>Categoria:</label>
@@ -67,26 +67,26 @@ const Create = () => {
           {categorias && categorias.map(cat=>(<option key={cat.nomeCategoria.toLowerCase()} value={cat.nomeCategoria.toLowerCase()}>{cat.nomeCategoria}</option>))}
         </select>
 
-        <label>Blog body:</label>
+        <label>Conteúdo:</label>
         <textarea
           required
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
+          value={conteudo}
+          onChange={(e) => setConteudo(e.target.value)}
         ></textarea>
         
         <label>Palavras-chave</label>
         <input type="text" required value={palavrasChave} onChange={e=>setPalavrasChave(e.target.value)} />
         
-        <label>Blog author:</label>
+        <label>Autor:</label>
         <select
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
+          value={autor}
+          onChange={(e) => setAutor(e.target.value)}
         >
           {/*realiza a listagem dos autores.*/}
           {autores && autores.map(autor=>(<option key={autor.nome.toLowerCase()} value={autor.nome.toLowerCase()}>{autor.nome}</option>))}
          
         </select>
-        <button>Add Blog</button>
+        <button>Cadastrar</button>
       </form>
     </div>
 
