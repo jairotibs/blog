@@ -7,13 +7,13 @@ import useFetch from "./useFetch";
 const Atualizar = () => {
   const history = useHistory();
   
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
-  const [author, setAuthor] = useState('');
+  const [titulo, setTitulo] = useState('');
+  const [conteudo, setConteudo] = useState('');
+  const [autor, setAutor] = useState('');
   const [categoria, setCategoria] = useState('')
   const [palavrasChave, setPalavrasChave] = useState('')
-  const dataAtualizacao = new Date()
-  const [ultimaDataAtualizacao, setUltimaDataAtualizacao] = useState(dataAtualizacao)
+  const dataAtualizacao = new Date(Date.now()).toLocaleString();//data hora
+  const [datasAtualizacao, setDatasAtualizacao] = useState('')
   
   const { id } = useParams();
 
@@ -26,11 +26,12 @@ const Atualizar = () => {
     fetch('http://localhost:8000/blogs/' + id, {
     }).then(retorno =>retorno.json())
       .then((registro)=>{
-      setTitle(registro.title);
-      setAuthor(registro.author);
-      setBody(registro.body);
+      setTitulo(registro.titulo);
+      setAutor(registro.autor);
+      setConteudo(registro.conteudo);
       setCategoria(registro.categoria);
       setPalavrasChave(registro.palavrasChave);
+      setDatasAtualizacao(registro.datasAtualizacao ? registro.datasAtualizacao.concat(','.concat(dataAtualizacao)) :'')
       //JSON.stringify(dadosBlog);
       })
       
@@ -40,8 +41,8 @@ const Atualizar = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { title, author, body, categoria, palavrasChave };
-    console.log(title);
+    const blog = { titulo, autor, conteudo, categoria, palavrasChave };
+    console.log(titulo);
     fetch('http://localhost:8000/blogs/'+ id, {
       method: 'PUT',
       headers: { "Content-Type": "application/json" },
@@ -56,41 +57,42 @@ const Atualizar = () => {
   
     <div className="create">
         <form onSubmit={handleSubmit}>
-            <label>Blog title:</label>
+            <label>Blog titulo:</label>
             <input 
               type="text" 
               required 
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              value={titulo}
+              onChange={(e) => setTitulo(e.target.value)}
 
              />
 
         <label>Categoria:</label>
         <select value={categoria} 
                 onChange={(e)=>setCategoria(e.target.value)}
-
+                
         >
           {/*categorias && categorias.map(cat =>(<option value={cat.nome.toLowerCase()}>{cat.nome}</option>))*/}
-          {categorias && categorias.map(cat=>(<option key={cat.nomeCategoria.toLowerCase()}>{cat.nomeCategoria}</option>))}
+          {categorias && categorias.map(cat=>(<option key={cat.nomeCategoria.toLowerCase()} value={categoria===cat.nomeCategoria.toLowerCase()?categoria:cat.nomeCategoria.toLowerCase()}>{cat.nomeCategoria}</option>))}
+          {console.log('categoria: '+categoria)}
         </select>
 
-        <label>Blog body:</label>
+        <label>Conteúdo:</label>
         <textarea
           required
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
+          value={conteudo}
+          onChange={(e) => setConteudo(e.target.value)}
         ></textarea>
 
         <label>Palavras-chave</label>
         <input type="text" required value={palavrasChave} onChange={e=>setPalavrasChave(e.target.value)} />
 
-        <label>Blog author:</label>
+        <label>Autor:</label>
         <select
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
+          value={autor}
+          onChange={(e) => setAutor(e.target.value)}
         >
           {/*realiza a listagem dos autores.*/}
-          {autores && autores.map(autor=>(<option key={autor.nome.toLowerCase()}>{autor.nome}</option>))}
+          {autores && autores.map(author=>(<option key={author.nome.toLowerCase()} value={autor===author.nome.toLowerCase()?autor:author.nome.toLowerCase()} >{author.nome}</option>))}
           
         </select>
         <button>Atualizar Blog</button>
