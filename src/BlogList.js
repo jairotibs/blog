@@ -19,7 +19,7 @@ const BlogList = ({ criteriosBusca, categorias, autores}) => {
 
   const [selecionadoOp1, setSelecionadoOp1] = useState(false);//asc
   const [selecionadoOp2, setSelecionadoOp2] = useState(false);//desc
-  const [selecionadoOp3, setSelecionadoOp3] = useState(false);//nada
+  const [selecionadoOp3, setSelecionadoOp3] = useState(false);//data do cadastro
   //&_sort=titulo&_order=desc
   //const ordenacao = '&_sort='.concat(titulo).concat('&_order=').concat(desc);
 //A url é atualizada apenas quando as informações referentes a opção selecionada no primeiro seletor é realizada ou quando alguma opção no segundo seletor é selecionado.
@@ -43,6 +43,10 @@ useEffect(()=>{
 
       setUrll(ulr2+'?_sort=titulo&_order=desc')
       
+    }//se a data de criação estiver selecionada
+    else if (selecionadoOp3){
+
+     // setUrll(ulr2+'?_sort=data')
     }
     else{//se não houver seleção ou a terceira opção estiver selecionada, manterá a opção
       
@@ -169,13 +173,21 @@ const mudarValorClique = ( valor) => {
   if (valor === 'asc') {
     console.log('entrou no asc')
     setSelecionadoOp2(selecionadoOp2 ? !selecionadoOp2 : selecionadoOp2);
+    setSelecionadoOp3(selecionadoOp3 ? !selecionadoOp3 : selecionadoOp3);
     setSelecionadoOp1(true);
     
   }//se a seleção for desc
-  else {
+  else if(valor === 'desc'){
     console.log('entrou no desc')
     setSelecionadoOp1(selecionadoOp1 ? !selecionadoOp1 : selecionadoOp1);
+    setSelecionadoOp3(selecionadoOp3 ? !selecionadoOp3 : selecionadoOp3);
     setSelecionadoOp2(true);
+  }
+  else if(valor === 'dataCadastro'){
+    console.log('entrou no dataCadastro')
+    setSelecionadoOp1(selecionadoOp1? !selecionadoOp1 : selecionadoOp1);
+    setSelecionadoOp2(selecionadoOp2? !selecionadoOp2 : selecionadoOp2);
+    setSelecionadoOp3(true);
   }
 
 };
@@ -211,17 +223,17 @@ const mudarValorClique = ( valor) => {
             {/*<input type="radio" value={selecionadoOp2} name="desc" onChange={e=>setSelecionadoOp2(!e.target.value)} checked={selecionadoOp2} />*/}
           </label><br/>
 
-          <label>
+          {/*<label>
             <input type="radio" value={selecionadoOp3} name="titulo" onChange={e=>mudarValorClique(e.target.name)} checked={selecionadoOp3} /> título
-          </label>
+          </label>*/}
 
           <label>
-            <input type="radio" value={selecionadoOp3} name="dataCriacao" onChange={e=>mudarValorClique(e.target.name)} checked={selecionadoOp3} /> data da criação
+            <input type="radio" value={selecionadoOp3} name="dataCadastro" onChange={e=>mudarValorClique(e.target.name)} checked={selecionadoOp3} /> data da criação
           </label>
 
-          <label>
-            <input type="radio" value={selecionadoOp3} name="dataAtualizacao" onChange={e=>mudarValorClique(e.target.name)} checked={selecionadoOp3} /> data da atualização
-          </label>
+          {/*<label>
+            <input type="radio" value={selecionadoOp4} name="dataAtualizacao" onChange={e=>mudarValorClique(e.target.name)} checked={selecionadoOp3} /> data da atualização
+          </label>*/}
         </div>
       </fieldset>
       

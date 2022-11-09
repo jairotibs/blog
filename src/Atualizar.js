@@ -12,8 +12,9 @@ const Atualizar = () => {
   const [autor, setAutor] = useState('');
   const [categoria, setCategoria] = useState('')
   const [palavrasChave, setPalavrasChave] = useState('')
-  const dataAtualizacao = new Date(Date.now()).toLocaleString();//data hora
-  const [datasAtualizacao, setDatasAtualizacao] = useState('')
+  const [dataCadastro, setDataCadastro] = useState('')
+  const dtAtualizacao = new Date(Date.now()).toLocaleString();//data hora
+  const [dataUltimaAtualizacao, setDataUltimaAtualizacao] = useState(dtAtualizacao);
   
   const { id } = useParams();
 
@@ -31,7 +32,7 @@ const Atualizar = () => {
       setConteudo(registro.conteudo);
       setCategoria(registro.categoria);
       setPalavrasChave(registro.palavrasChave);
-      setDatasAtualizacao(registro.datasAtualizacao ? registro.datasAtualizacao.concat(','.concat(dataAtualizacao)) :'')
+      setDataCadastro(registro.dataCadastro);
       //JSON.stringify(dadosBlog);
       })
       
@@ -41,7 +42,7 @@ const Atualizar = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { titulo, autor, conteudo, categoria, palavrasChave };
+    const blog = { titulo, autor, conteudo, categoria, palavrasChave, dataCadastro, dataUltimaAtualizacao };
     console.log(titulo);
     fetch('http://localhost:8000/blogs/'+ id, {
       method: 'PUT',
