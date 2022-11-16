@@ -112,6 +112,132 @@
       "palavrasChave": "Cartola, Futebol, Copa, Brasil, Jogadores, Seleção, Seleções, Catar",
       "dataCadastro": "2022-11-04T12:10:20.500Z",
       "id": 17
+    },
+    {
+      "titulo": "Comidas Nordestinas",
+      "conteudo": "comida regional do Nordeste",
+      "autor": "jairo",
+      "categoria": "cultura",
+      "palavrasChave": "nordeste, comidas",
+      "dataCadastro": "2022-11-07T16:36:19.811Z",
+      "id": 18
+    },
+    {
+      "titulo": "blog blog blog",
+      "conteudo": "dsts",
+      "autor": "jairo",
+      "categoria": "educação",
+      "palavrasChave": "teste",
+      "dataCadastro": "Mon Nov 07 2022",
+      "id": 19
+    },
+    {
+      "titulo": "blog teste 2",
+      "conteudo": "asdfadf",
+      "autor": "saulo",
+      "categoria": "educação",
+      "palavrasChave": "dafadf",
+      "dataCadastro": "13:58:03 GMT-0300 (Horário Padrão de Brasília)",
+      "id": 20
+    },
+    {
+      "titulo": "blog teste",
+      "conteudo": "dsafd",
+      "autor": "yoshi",
+      "categoria": "política",
+      "palavrasChave": "sdfa",
+      "dataCadastro": "07/11/2022 13:59:06",
+      "id": 21
+    },
+    {
+      "titulo": "Blog dos Amigos",
+      "conteudo": "dfadf",
+      "autor": "",
+      "categoria": "aleatório",
+      "palavrasChave": "sdfadf",
+      "dataCadastro": "07/11/2022",
+      "id": 22
+    },
+    {
+      "titulo": "blog blog blog",
+      "conteudo": "blog",
+      "autor": "jairo",
+      "categoria": "aleatório",
+      "palavrasChave": "blog",
+      "dataCadastro": "Mon Nov 07 2022",
+      "id": 23
+    },
+    {
+      "titulo": "blog BLOG",
+      "conteudo": "dfda",
+      "autor": "yoshi",
+      "categoria": "religião",
+      "palavrasChave": "dfad",
+      "dataCadastro": "14:36:12 GMT-0300 (Horário Padrão de Brasília)",
+      "id": 24
+    },
+    {
+      "titulo": "titulo",
+      "conteudo": "dfdf",
+      "autor": "saulo",
+      "categoria": "educação",
+      "palavrasChave": "sadfda",
+      "dataCadastro": "14:36:59 GMT-0300 (Horário Padrão de Brasília)",
+      "id": 25
+    },
+    {
+      "titulo": "tt",
+      "conteudo": "df",
+      "autor": "tony",
+      "categoria": "aleatório",
+      "palavrasChave": "sdf",
+      "dataCadastro": "14:37:36 GMT-0300 (Horário Padrão de Brasília)",
+      "id": 26
+    },
+    {
+      "titulo": "dfdafdafad",
+      "conteudo": "adfadf",
+      "autor": "saulo",
+      "categoria": "política",
+      "palavrasChave": "dfadf",
+      "dataCadastro": "Mon Nov 07 2022",
+      "id": 27
+    },
+    {
+      "titulo": "dfasdf",
+      "conteudo": "dfd",
+      "autor": "jairo",
+      "categoria": "política",
+      "palavrasChave": "dfd",
+      "dataCadastro": "07/11/2022",
+      "id": 28
+    },
+    {
+      "titulo": "titulo 3",
+      "conteudo": "dfa",
+      "autor": "jairo",
+      "categoria": "entretenimento",
+      "palavrasChave": "sdfd",
+      "dataCadastro": "07/11/2022 14:46:32",
+      "id": 29
+    },
+    {
+      "titulo": "blog de notícias",
+      "autor": "jairo",
+      "conteudo": "Blog sobre tudo para se manter informado. Todas as noticias. dfdfdfdfdfdfdfdfdfdfdfdfdfdfdfxzs",
+      "categoria": "aleatório",
+      "palavrasChave": "esportes, ciência, educação, aleatoriedades, política, entretenimento, saúde",
+      "id": 30
+    },
+    {
+      "titulo": "blog do sti",
+      "autor": "yoshi",
+      "conteudo": "adfadf",
+      "categoria": "aleatório",
+      "palavrasChave": "institucional",
+      "dataCadastro": "09/11/2022 16:07:18",
+      "dataUltimaAtualizacao": "09/11/2022 16:44:58",
+      "id": 31
     }
   ],
   "autores": [
@@ -214,7 +340,7 @@
         },
         {
           "titulo": "autor",
-          "url": "/createautor"
+          "url": "/createAuthor"
         }
       ]
     },

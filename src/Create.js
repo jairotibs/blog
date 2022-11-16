@@ -11,8 +11,9 @@ const Create = () => {
   const [autor, setAutor] = useState('');
   const [categoria, setCategoria] = useState('')
   const [palavrasChave, setPalavrasChave] = useState('')
-  const dataHoje = new Date();
+  const dataHoje = new Date(Date.now()).toLocaleString().split(',')[0];
   const [dataCadastro, setDataCadastro] = useState(dataHoje)
+  const [datasAtualizacao, setDatasAtualizacao] = useState('')
 
   const history = useHistory();
   
@@ -29,7 +30,7 @@ const Create = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { titulo, conteudo, autor, categoria, palavrasChave, dataCadastro };
+    const blog = { titulo, conteudo, autor, categoria, palavrasChave, dataCadastro, datasAtualizacao };
 
     fetch('http://localhost:8000/blogs', {
       method: 'POST',
@@ -63,7 +64,7 @@ const Create = () => {
                 onChange={(e)=>setCategoria(e.target.value)}
 
         >
-        
+          
           {categorias && categorias.map(cat=>(<option key={cat.nomeCategoria.toLowerCase()} value={cat.nomeCategoria.toLowerCase()}>{cat.nomeCategoria}</option>))}
         </select>
 
