@@ -1,8 +1,31 @@
 import { Link } from "react-router-dom";
+import MenuItens from "./MenuItens";
+import useFetch from "./useFetch";
 
 const Navbar = () => {
+
+  const {error, isPending, data: menuItens} = useFetch('http://localhost:8000/menuItens')
+
   return (
-    <nav className="navbar">
+    <>
+     <nav className="navbar">
+     <h1>Blogs Manager</h1>
+     <div className="links">
+     {/*<Link to={ item.url } style={{ 
+          color: 'white', 
+          backgroundColor: '#f1356d',
+          borderRadius: '8px' 
+        }}>{ item.titulo }</Link>*/}
+    <ul className="menus">
+     {menuItens && menuItens.map(item=>
+        <MenuItens itens={item} key={item.titulo}/>
+        )
+      }
+    </ul>
+     </div>
+     </nav>
+   
+    {/*<nav className="navbar">
       <h1>Blogs Manager</h1>
       <div className="links">
         <Link to="/">Home</Link>
@@ -28,7 +51,8 @@ const Navbar = () => {
         }} >Novo Criterio</Link>}
         
       </div>
-    </nav>
+      </nav>*/}
+       </>
   );
 }
  

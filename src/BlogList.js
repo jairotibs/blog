@@ -248,7 +248,7 @@ const mudarValorClique = ( valor) => {
           </label><br />
 
           <label>
-            <input type="radio" value={selecionadoOp4} name="dataUltimaAtualizacao" onChange={e=>mudarValorClique(e.target.name)} checked={selecionadoOp4} /> Última atualização
+            <input type="radio" value={selecionadoOp4} name="dataUltimaAtualizacao" onChange={e=>mudarValorClique(e.target.name)} checked={selecionadoOp4} /> última atualização
           </label>
         </div>
       </fieldset>

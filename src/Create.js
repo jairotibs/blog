@@ -11,9 +11,10 @@ const Create = () => {
   const [autor, setAutor] = useState('');
   const [categoria, setCategoria] = useState('')
   const [palavrasChave, setPalavrasChave] = useState('')
-  const dataHoje = new Date(Date.now()).toLocaleString().split(',')[0];
+  //const dataHoje = new Date(Date.now()).toLocaleString();
+  const dataHoje = new Date(Date.now()).toISOString();
   const [dataCadastro, setDataCadastro] = useState(dataHoje)
-  const [datasAtualizacao, setDatasAtualizacao] = useState('')
+  const [dataUltimaAtualizacao, setDataUltimaAtualizacao] = useState('')
 
   const history = useHistory();
   
@@ -30,7 +31,7 @@ const Create = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { titulo, conteudo, autor, categoria, palavrasChave, dataCadastro, datasAtualizacao };
+    const blog = { titulo, conteudo, autor, categoria, palavrasChave, dataCadastro, dataUltimaAtualizacao };
 
     fetch('http://localhost:8000/blogs', {
       method: 'POST',

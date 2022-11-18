@@ -6,14 +6,14 @@ import useFetch from "./useFetch";
 
 const Atualizar = () => {
   const history = useHistory();
-  
+  const [blog, setBlog] = useState({});
   const [titulo, setTitulo] = useState('');
   const [conteudo, setConteudo] = useState('');
   const [autor, setAutor] = useState('');
   const [categoria, setCategoria] = useState('')
   const [palavrasChave, setPalavrasChave] = useState('')
   const [dataCadastro, setDataCadastro] = useState('')
-  const dtAtualizacao = new Date(Date.now()).toLocaleString();//data hora
+  const dtAtualizacao = new Date(Date.now()).toISOString();//data hora
   const [dataUltimaAtualizacao, setDataUltimaAtualizacao] = useState(dtAtualizacao);
   
   const { id } = useParams();
@@ -27,18 +27,28 @@ const Atualizar = () => {
     fetch('http://localhost:8000/blogs/' + id, {
     }).then(retorno =>retorno.json())
       .then((registro)=>{
-      setTitulo(registro.titulo);
+      //setTitulo(registro.titulo);
       setAutor(registro.autor);
       setConteudo(registro.conteudo);
       setCategoria(registro.categoria);
       setPalavrasChave(registro.palavrasChave);
       setDataCadastro(registro.dataCadastro);
       //JSON.stringify(dadosBlog);
+      setBlog(registro);
       })
       
     },[id])
  
   
+  const handleInput = (attr, value) => {
+    /*
+    if (attr === 'titulo') {
+      setTitulo(value);
+    }
+    */
+    setBlog({ ...blog,[attr]:value });
+    console.log('executou o setBlog');
+  }
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -58,13 +68,14 @@ const Atualizar = () => {
   
     <div className="create">
         <form onSubmit={handleSubmit}>
-            <label>Blog titulo:</label>
+            <label>Título:</label>
             <input 
               type="text" 
               required 
-              value={titulo}
-              onChange={(e) => setTitulo(e.target.value)}
-
+              // value={titulo}
+              // onChange={(e) => setTitulo(e.target.value)}
+              value={blog.titulo}
+              onChange={(e) => handleInput('titulo', e.target.value)}
              />
 
         <label>Categoria:</label>
@@ -85,7 +96,10 @@ const Atualizar = () => {
         ></textarea>
 
         <label>Palavras-chave</label>
-        <input type="text" required value={palavrasChave} onChange={e=>setPalavrasChave(e.target.value)} />
+        <input type="text" required 
+               value={blog.palavrasChave} 
+               onChange={(e)=>handleInput('palavrasChave', e.target.value)} />
+        
 
         <label>Autor:</label>
         <select

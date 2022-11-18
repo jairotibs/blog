@@ -115,8 +115,19 @@
   list-style: none;
   background-color: #fff;
   border-radius: 0.5rem;
- 
+  
 }
+.dropdown.show {
+  display: none;
+}
+
+
+.dropdown .dropdown-submenu {
+  position: absolute;
+  left: 100%;
+  top: -7px;
+}
+
 .menus {
   display: flex;
   align-items: center;
