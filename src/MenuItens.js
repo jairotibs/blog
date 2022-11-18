@@ -21,7 +21,7 @@ const MenuItens = ({itens}) =>{
                         {console.log('o dropdown eh '+dropdown)}
                         <Dropdown submenu={itens.submenu} dropdown={dropdown}/>
                     </>  ) : 
-                           <Link to={itens.url} className={`dropdown ${dropdown ? 'show' : ''}`}>{itens.titulo}</Link>}
+                           <Link to={itens.url} >{itens.titulo}</Link>}
   </li>
     )
 }
