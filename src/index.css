@@ -115,9 +115,8 @@
   list-style: none;
   background-color: #fff;
   border-radius: 0.5rem;
-  
 }
-.dropdown.show {
+.dropdown.notshow {
   display: none;
 }
 
